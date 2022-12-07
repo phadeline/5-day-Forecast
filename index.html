@@ -26,16 +26,18 @@
     </header>
 
     <div class="row">
-      <div id="search" class="col-3 mt-4 ">
+      <div id="search" class="col-lg-3 col-sm-12 mt-4">
         <label class="form-label">Search For A City:</label>
         <input class="form-control" id="form" placeholder="Los Angeles" />
         <div id="passwordHelpBlock" class="form-text">
           Search for a city to begin viewing a 5-Day Forecast
         </div>
-        <ul id="previous"></ul>
+        <ul id="previous">
+          Previous Searches
+        </ul>
       </div>
 
-      <div class="col-9">
+      <div class="col-lg-9 col-sm-12">
         <div id="results" class="row">
           <div id="currentcity" class="col-12 mt-4 mb-5">
             <h2 id="date"></h2>
@@ -44,38 +46,7 @@
             </div>
             <ul id="current"></ul>
           </div>
-
-          
-          <div class="col-2 me-4 weathers">
-            <div class="weather-icon">
-              <img class="icon" id="day1icon" />
-            </div>
-            <ul id="day1"></ul>
-          </div>
-          <div class="col-2 me-4 weathers">
-            <div class="weather-icon">
-              <img class="icon" id="day2icon" />
-            </div>
-            <ul id="day2"></ul>
-          </div>
-          <div class="col-2 me-4 weathers">
-            <div class="weather-icon">
-              <img class="icon" id="day3icon" />
-            </div>
-            <ul id="day3"></ul>
-          </div>
-          <div class="col-2 me-4 weathers">
-            <div class="weather-icon">
-              <img class="icon" id="day4icon" />
-            </div>
-            <ul id="day4"></ul>
-          </div>
-          <div class="col-2 weathers">
-            <div class="weather-icon">
-              <img class="icon" id="day5icon" />
-            </div>
-            <ul id="day5"></ul>
-          </div>
+          <div class="row" id="allweathers"></div>
         </div>
       </div>
     </div>
@@ -90,6 +61,7 @@
       integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
       crossorigin="anonymous"
     ></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="./assets/js/script.js"></script>
   </body>
 </html>

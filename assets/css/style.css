@@ -1,9 +1,7 @@
-body {width: 100%;
-    height: 100%;}
 
 h1 {text-align: center;
 padding: 20px 0px;
-background-color:  #11aff958;}
+background-color:  #11aff958;} 
 
 .weather-icon {text-align: center;}
 
@@ -17,14 +15,23 @@ font-size: 30px;}
 
 h2 {text-align: center; font-size: 50px;}
 
-#currentcity {padding: 0px; margin: 0px; width: 92%;background-color:  #56c6fa31; opacity: 0.7;
-    font-weight: bold;}
+#currentcity {padding: 0px; margin: 0px;background-color: rgba(255, 192, 203, 0.262);
+    font-weight: bold; border-style: groove;}
 
 h3 {font-size: 20px;}
 
-#currentcity{border-style: groove;}
+#currentcity:hover {background-color: rgba(255, 192, 203, 0.619);}
 
-.weathers {background-color:  #ffffff; opacity: 0.7;
-border-style: double;}
+.weathers {background-color: #11aff972;;
+border-style: double; margin-bottom: 20px; font-weight: bold;}
 
 p {font-weight: bold;}
+
+#allweathers {display: flex; justify-content: center;}
+
+.weathers:hover {background-color: #11aff99e}
+
+#previous {text-align: center; margin-top: 20px; font-weight: bold;}
+
+
+
