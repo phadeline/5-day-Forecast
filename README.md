@@ -42,7 +42,7 @@ The purpose of this project was to create a weather app that displays today's cu
 Initially, when you open the website, the weather for "Los Angeles" is displayed on the screen. This is because, "Los Anegeles" is the default location used for the website. To search for your preferred city, simply type the city name in the input box and press the "Enter" button. Soon after, the current weather should appear with the temperature, humidity, wind speed and an icon relating to the current weather statistics for the city. Below this are 5 five boxes, each box represents a day in the future and each box contains the temperature, icon, humidity and wind speed. Furthermore, each search is saved and the user is able to remove their past searches as well.
 
 
-## Link to Application: 
+## Link to Application: https://phadeline.github.io/Weather-Forecast/
 
 [Your Weather Forecast .webm](https://user-images.githubusercontent.com/112015433/206255464-8f052ef0-de12-46dc-a25b-09ca9ff2ec08.webm)
 
