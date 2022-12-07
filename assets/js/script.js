@@ -172,8 +172,10 @@ $(document).ready(function () {
   let pastsearches = $("#previous");
   for (let i = 0; i < previoussearch.length; i++) {
     let li = $("<li>");
+
     $(li).css({ "list-style-type": "none" });
     li.text(previoussearch[i]);
+
     $(pastsearches).append(li);
   }
 });

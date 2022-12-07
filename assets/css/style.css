@@ -37,8 +37,11 @@ p {font-weight: bold;}
 
 #previous {text-align: center; margin-top: 20px; font-weight: bold;}
 
-li {font-size: 15px;}
+li {font-size: 20px; margin-bottom: 10px;}
 
 #previous {font-size: 25px;}
+
+button{font-size: 10px; height: 20px;}
+
 
 
