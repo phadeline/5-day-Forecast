@@ -35,13 +35,13 @@ p {font-weight: bold;}
 
 .weathers:hover {background-color: #11aff99e}
 
-#previous {text-align: center; margin-top: 20px; font-weight: bold;}
+#previous {text-align: center; font-weight: bold; font-size: 25px; margin: 0px; padding: 0px; cursor: pointer; background-color: rgba(255, 255, 255, 0.581);}
 
 li {font-size: 20px; margin-bottom: 10px;}
 
-#previous {font-size: 25px;}
-
 button{font-size: 10px; height: 20px;}
+
+#text {text-align: center;}
 
 
 

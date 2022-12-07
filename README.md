@@ -2,7 +2,7 @@
 
 ## Description
 
-The purpose of this project was to create a weather app that displays today's current weather and additionally, a 5-day weather forecast. The idea behind it is the user will get the relevant data such as the temperature, humidity, wind speed as well as an icon relating to the weather outlook for their preferred city. This was accomplished using the Api from OpenWeather (https://openweathermap.org/) which provided the current weather and the 5-day forecast for free.
+The purpose of this project was to create a weather app that displays today's current weather and additionally, a 5-day weather forecast. The idea behind it is the user will get relevant data such as the temperature, humidity, wind speed as well as an icon relating to the weather outlook for their preferred city. This was accomplished using the Api from OpenWeather (https://openweathermap.org/) which provided the current weather and the 5-day forecast for free.
 
 ## Table of Contents
 

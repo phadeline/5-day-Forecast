@@ -2,9 +2,10 @@ var input = document.getElementById("form");
 var date = document.getElementById("date");
 var current = document.getElementById("current");
 var allweathers = document.getElementById("allweathers");
+let previous = document.getElementById("previous");
 
 var today = dayjs().format("MM/DD/YYYY");
-// let previous = document.getElementById("previous");
+
 let previoussearch = JSON.parse(localStorage.getItem("previoussearch")) || [];
 
 //This is the default value of the input box.
@@ -16,7 +17,7 @@ let weatherarray = [1, 9, 17, 25, 33];
 weatherData();
 
 function weatherData() {
-  var search = input.value;
+  search = input.value;
   console.log(search);
   console.log(previoussearch);
 
@@ -24,8 +25,10 @@ function weatherData() {
     previoussearch.push(search);
     localStorage.setItem("previoussearch", JSON.stringify(previoussearch));
   }
-
-  //This fetches the longitude and latitude of a location
+  searchGo(search);
+}
+//This fetches the longitude and latitude of a location
+function searchGo(search) {
   fetch(
     "https://api.openweathermap.org/geo/1.0/direct?q=" +
       search +
@@ -165,6 +168,14 @@ input.addEventListener("keypress", function (event) {
     current.textContent = " ";
     weatherData();
   }
+});
+
+//When the user clicks ona previous search, the weather stats will show up
+previous.addEventListener("click", function (event) {
+  let text = event.target.textContent;
+  allweathers.textContent = "";
+  current.textContent = "";
+  searchGo(text);
 });
 
 // on load, the user's preious searches will show up
