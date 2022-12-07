@@ -2,14 +2,12 @@ var input = document.getElementById("form");
 var date = document.getElementById("date");
 var current = document.getElementById("current");
 var allweathers = document.getElementById("allweathers");
-// var day1 = document.getElementById("day1");
-// var day2 = document.getElementById("day2");
-// var day3 = document.getElementById("day3");
-// var day4 = document.getElementById("day4");
-// var day5 = document.getElementById("day5");
+
 var today = dayjs().format("MM/DD/YYYY");
 // let previous = document.getElementById("previous");
 let previoussearch = JSON.parse(localStorage.getItem("previoussearch")) || [];
+
+//This is the default value of the input box.
 input.value = "Los Angeles";
 
 // the are the data values from the third fetch that will be used to get the weather stats
@@ -94,7 +92,10 @@ function weatherData() {
         .then(function (data) {
           console.log(data);
           for (let i = 0; i < weatherarray.length; i++) {
+            //this gets the value of the weatherarray which will be used later on when getting the weather stats
+            //for example in line 126.
             newarray = weatherarray[i];
+
             //Creating div that will contain unorderlist and weather icon
             divweather = document.createElement("div");
             divweather.setAttribute(
@@ -153,20 +154,18 @@ function weatherData() {
     });
 }
 
+
+ // If the user presses the "Enter" key on the keyboard then the city they search weather stats will populate
 input.addEventListener("keypress", function (event) {
-  // If the user presses the "Enter" key on the keyboard then the city they search weather stats will populate
 
   if (event.key === "Enter") {
-    day1.textContent = " ";
-    day2.textContent = " ";
-    day3.textContent = " ";
-    day4.textContent = " ";
-    day5.textContent = " ";
+    allweathers.textContent = "";
     current.textContent = " ";
     weatherData();
   }
 });
 
+// on load, the user's preious searches will show up
 $(document).ready(function () {
   let pastsearches = $("#previous");
   let lastsearch = previoussearch.length - 1;
