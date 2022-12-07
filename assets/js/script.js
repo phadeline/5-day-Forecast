@@ -23,10 +23,23 @@ function weatherData() {
 
   let search2 = search.toUpperCase();
 
+ 
   if (previoussearch.includes(search2) == false) {
     previoussearch.push(search2);
     localStorage.setItem("previoussearch", JSON.stringify(previoussearch));
   }
+
+  //previous searches populate automatically
+  previous.textContent = " ";
+  for (let i = 0; i < previoussearch.length; i++) {
+    let li = $("<li>");
+
+    $(li).css({ "list-style-type": "none" });
+    li.text(previoussearch[i]);
+
+    $(previous).append(li);
+  }
+
   searchGo(search2);
 }
 //This fetches the longitude and latitude of a location
@@ -180,17 +193,4 @@ previous.addEventListener("click", function (event) {
   current.textContent = "";
   searchGo(text);
   event.preventDefault();
-});
-
-// on load, the user's preious searches will show up
-$(document).ready(function () {
-  let pastsearches = $("#previous");
-  for (let i = 0; i < previoussearch.length; i++) {
-    let li = $("<li>");
-
-    $(li).css({ "list-style-type": "none" });
-    li.text(previoussearch[i]);
-
-    $(pastsearches).append(li);
-  }
 });
