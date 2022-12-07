@@ -82,7 +82,7 @@ function weatherData() {
       //This fetches the api for the 5 day forecast
       //inserts the longitude and latitude into the api address to get weather data
       fetch(
-        "http://api.openweathermap.org/data/2.5/forecast?lat=" +
+        "https://api.openweathermap.org/data/2.5/forecast?lat=" +
           latitude +
           "&lon=" +
           longitude +
