@@ -1,3 +1,7 @@
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
 
 h1 {text-align: center;
 padding: 20px 0px;
@@ -27,11 +31,14 @@ border-style: double; margin-bottom: 20px; font-weight: bold;}
 
 p {font-weight: bold;}
 
-#allweathers {display: flex; justify-content: center;}
+#allweathers {display: flex; justify-content: center; align-items: center;}
 
 .weathers:hover {background-color: #11aff99e}
 
 #previous {text-align: center; margin-top: 20px; font-weight: bold;}
 
+li {font-size: 15px;}
+
+#previous {font-size: 25px;}
 
 

@@ -18,8 +18,12 @@ weatherData();
 function weatherData() {
   var search = input.value;
   console.log(search);
-  previoussearch.push([search]);
-  localStorage.setItem("previoussearch", JSON.stringify(previoussearch));
+  console.log(previoussearch);
+
+  if (previoussearch.includes(search) == false) {
+    previoussearch.push(search);
+    localStorage.setItem("previoussearch", JSON.stringify(previoussearch));
+  }
 
   //This fetches the longitude and latitude of a location
   fetch(
@@ -100,7 +104,7 @@ function weatherData() {
             divweather = document.createElement("div");
             divweather.setAttribute(
               "class",
-              "col-lg-3 col-md-5 me-4 col-sm-12 weathers"
+              "col-lg-3 col-md-5 me-1 col-sm-12 weathers"
             );
 
             //Creating div that will enclose weather icon image
@@ -154,10 +158,8 @@ function weatherData() {
     });
 }
 
-
- // If the user presses the "Enter" key on the keyboard then the city they search weather stats will populate
+// If the user presses the "Enter" key on the keyboard then the city they search weather stats will populate
 input.addEventListener("keypress", function (event) {
-
   if (event.key === "Enter") {
     allweathers.textContent = "";
     current.textContent = " ";
@@ -168,15 +170,6 @@ input.addEventListener("keypress", function (event) {
 // on load, the user's preious searches will show up
 $(document).ready(function () {
   let pastsearches = $("#previous");
-  let lastsearch = previoussearch.length - 1;
-
-  $.each(previoussearch, function (index, value) {
-    if (value == previoussearch[lastsearch]) {
-      previoussearch = previoussearch.splice(index, 1);
-      localStorage.setItem("previoussearch", JSON.stringify(previoussearch));
-    }
-  });
-
   for (let i = 0; i < previoussearch.length; i++) {
     let li = $("<li>");
     $(li).css({ "list-style-type": "none" });
