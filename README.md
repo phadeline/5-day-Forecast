@@ -44,7 +44,7 @@ Initially, when you open the website, the weather for "Los Angeles" is displayed
 
 ## Link to Application: 
 
-![My Image](./Assets/daily%20planner.png)
+[Your Weather Forecast.webm](https://user-images.githubusercontent.com/112015433/206254123-fd91b1e1-26f2-4a78-be6e-be933c25f0a8.webm)
 
 ## Credits/Collaborators
 - **OpenWeather Geocoding API:** https://openweathermap.org/api/geocoding-api
