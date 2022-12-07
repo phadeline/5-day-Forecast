@@ -23,7 +23,7 @@ function weatherData() {
 
   //This fetches the longitude and latitude of a location
   fetch(
-    "http://api.openweathermap.org/geo/1.0/direct?q=" +
+    "https://api.openweathermap.org/geo/1.0/direct?q=" +
       search +
       "&appid=502f6feabe120b630f5f19b3144af100"
   )
