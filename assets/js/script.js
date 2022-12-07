@@ -167,15 +167,17 @@ input.addEventListener("keypress", function (event) {
     allweathers.textContent = "";
     current.textContent = " ";
     weatherData();
+    event.preventDefault();
   }
 });
 
-//When the user clicks ona previous search, the weather stats will show up
+//When the user clicks on a previous search, the weather stats will show up
 previous.addEventListener("click", function (event) {
   let text = event.target.textContent;
   allweathers.textContent = "";
   current.textContent = "";
   searchGo(text);
+  event.preventDefault();
 });
 
 // on load, the user's preious searches will show up
