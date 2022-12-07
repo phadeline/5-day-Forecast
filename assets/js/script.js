@@ -21,11 +21,13 @@ function weatherData() {
   console.log(search);
   console.log(previoussearch);
 
-  if (previoussearch.includes(search) == false) {
-    previoussearch.push(search);
+  let search2 = search.toUpperCase();
+
+  if (previoussearch.includes(search2) == false) {
+    previoussearch.push(search2);
     localStorage.setItem("previoussearch", JSON.stringify(previoussearch));
   }
-  searchGo(search);
+  searchGo(search2);
 }
 //This fetches the longitude and latitude of a location
 function searchGo(search) {
