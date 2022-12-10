@@ -6,9 +6,9 @@ The purpose of this project was to create a weather app that displays today's cu
 
 ## Table of Contents
 
-- [User Story](#Userstory)
-- [Acceptance Criteria](#Acceptancecriteria)
-- [Technologies Used](#Technologies)
+- [User Story](#User-story)
+- [Acceptance Criteria](#Acceptancec-riteria)
+- [Technologies Used](#Technologies-used)
 - [Installation](#Installation)
 - [Usage](#usage)
 - [Credits/Collaborators](#credits/collaborators)
