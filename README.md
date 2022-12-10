@@ -7,11 +7,11 @@ The purpose of this project was to create a weather app that displays today's cu
 ## Table of Contents
 
 - [User Story](#User-story)
-- [Acceptance Criteria](#Acceptancec-riteria)
+- [Acceptance Criteria](#Acceptance-criteria)
 - [Technologies Used](#Technologies-used)
 - [Installation](#Installation)
 - [Usage](#usage)
-- [Credits/Collaborators](#credits/collaborators)
+- [Credits/Collaborators](#credits-/-collaborators)
 - [License](#license)
 
 **User Story**
@@ -41,6 +41,9 @@ The purpose of this project was to create a weather app that displays today's cu
   2. The second technology used is the Current Weather API: this was used to get the current weather for today's date by applying the longitude and latitude acquired from the Geocoding API in its fetch call.
 
   3. The third technology used is the 5-day weather API: this was used to get the 5-day forecast by applying the longitude and latitude acquired from the Geocoding API in its fetch call.
+
+  ## Installation 
+  No installation necessary.
 
 ## Usage
 
