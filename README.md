@@ -11,7 +11,7 @@ The purpose of this project was to create a weather app that displays today's cu
 - [Technologies Used](#Technologies-used)
 - [Installation](#Installation)
 - [Usage](#usage)
-- [Credits/Collaborators](#credits-collaborators)
+- [Credits/Collaborators](#credits-and-collaborators)
 - [License](#license)
 
 ## User Story
@@ -42,7 +42,7 @@ The purpose of this project was to create a weather app that displays today's cu
 
   3. The third technology used is the 5-day weather API: this was used to get the 5-day forecast by applying the longitude and latitude acquired from the Geocoding API in its fetch call.
 
-  ## Installation 
+## Installation 
   No installation necessary.
 
 ## Usage
@@ -55,7 +55,7 @@ Initially, when you open the website, the weather for "Los Angeles" is displayed
 [Your Weather Forecast .webm](https://user-images.githubusercontent.com/112015433/206255464-8f052ef0-de12-46dc-a25b-09ca9ff2ec08.webm)
 
 
-## Credits/Collaborators
+## Credits and Collaborators
 
 - **OpenWeather Geocoding API:** https://openweathermap.org/api/geocoding-api
 - **OpenWeather current Weather API:** https://openweathermap.org/current
