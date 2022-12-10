@@ -8,7 +8,7 @@ The purpose of this project was to create a weather app that displays today's cu
 
 - [User Story](#Userstory)
 - [Acceptance Criteria](#Acceptancecriteria)
-- [Technologies Used](#Technologiesused)
+- [Technologies Used](#Technologies)
 - [Installation](#Installation)
 - [Usage](#usage)
 - [Credits/Collaborators](#credits/collaborators)
