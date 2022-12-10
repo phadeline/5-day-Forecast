@@ -11,16 +11,16 @@ The purpose of this project was to create a weather app that displays today's cu
 - [Technologies Used](#Technologies-used)
 - [Installation](#Installation)
 - [Usage](#usage)
-- [Credits/Collaborators](#credits-/-collaborators)
+- [Credits/Collaborators](#credits-collaborators)
 - [License](#license)
 
-**User Story**
+## User Story
 
 - AS A traveler
 - I WANT to see the weather outlook for multiple cities
 - SO THAT I can plan a trip accordingly
 
-**Acceptance Criteria**
+## Acceptance Criteria
 
 - GIVEN a weather dashboard with form inputs
 - WHEN I search for a city
