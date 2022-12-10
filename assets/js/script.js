@@ -81,7 +81,7 @@ function searchGo(search) {
           //getting the icon for currentday
           let icontoday = document.getElementById("icontoday");
           let iconimage1 = data.weather[0].icon;
-          incon1url = "http://openweathermap.org/img/w/" + iconimage1 + ".png";
+          incon1url = "https://openweathermap.org/img/w/" + iconimage1 + ".png";
           icontoday.src = incon1url;
 
           //calculating the fahrenheit for today's temp
