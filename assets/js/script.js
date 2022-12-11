@@ -23,7 +23,6 @@ function weatherData() {
 
   let search2 = search.toUpperCase();
 
- 
   if (previoussearch.includes(search2) == false) {
     previoussearch.push(search2);
     localStorage.setItem("previoussearch", JSON.stringify(previoussearch));
@@ -32,12 +31,20 @@ function weatherData() {
   //previous searches populate automatically
   previous.textContent = " ";
   for (let i = 0; i < previoussearch.length; i++) {
-    let li = $("<li>");
+    let button = $("<button>");
 
-    $(li).css({ "list-style-type": "none" });
-    li.text(previoussearch[i]);
+    button.text(previoussearch[i]);
 
-    $(previous).append(li);
+    $(previous).append(button);
+
+    //When the user clicks on a previous search, the weather stats will show up
+    $(button).on("click", function (event) {
+      let text = this.textContent;
+      allweathers.textContent = "";
+      current.textContent = "";
+      searchGo(text);
+      event.preventDefault();
+    });
   }
 
   searchGo(search2);
@@ -186,11 +193,12 @@ input.addEventListener("keypress", function (event) {
   }
 });
 
-//When the user clicks on a previous search, the weather stats will show up
-previous.addEventListener("click", function (event) {
-  let text = event.target.textContent;
-  allweathers.textContent = "";
-  current.textContent = "";
-  searchGo(text);
-  event.preventDefault();
-});
+// //When the user clicks on a previous search, the weather stats will show up
+// button.addEventListener("click", function (event) {
+//   let text = this.innerHTML;
+//   console.log(text);
+//   allweathers.textContent = "";
+//   current.textContent = "";
+//   searchGo(text);
+//   event.preventDefault();
+// });

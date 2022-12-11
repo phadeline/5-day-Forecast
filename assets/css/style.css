@@ -35,11 +35,9 @@ p {font-weight: bold;}
 
 .weathers:hover {background-color: #11aff99e}
 
-#previous {text-align: center; font-weight: bold; font-size: 25px; margin: 0px; padding: 0px; cursor: pointer; background-color: rgba(255, 255, 255, 0.581);}
+#previous {text-align: center; font-weight: bold; font-size: 25px; cursor: pointer; display: flex; flex-direction: column;}
 
-#previous li {font-size: 20px; margin-bottom: 10px;}
-
-button{font-size: 10px; height: 20px;}
+#previous button {font-size: 20px; margin-bottom: 10px; background-color: lightblue;}
 
 #text {text-align: center;}
 
