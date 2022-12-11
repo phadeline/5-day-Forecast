@@ -49,8 +49,9 @@ function weatherData() {
 
   searchGo(search2);
 }
-//This fetches the longitude and latitude of a location
+
 function searchGo(search) {
+  //This fetches the longitude and latitude of a location
   fetch(
     "https://api.openweathermap.org/geo/1.0/direct?q=" +
       search +
@@ -192,13 +193,3 @@ input.addEventListener("keypress", function (event) {
     event.preventDefault();
   }
 });
-
-// //When the user clicks on a previous search, the weather stats will show up
-// button.addEventListener("click", function (event) {
-//   let text = this.innerHTML;
-//   console.log(text);
-//   allweathers.textContent = "";
-//   current.textContent = "";
-//   searchGo(text);
-//   event.preventDefault();
-// });
