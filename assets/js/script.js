@@ -148,7 +148,7 @@ function searchGo(search) {
 
             //getting the icon
             let iconday = data.list[newarray].weather[0].icon;
-            dayurl = "http://openweathermap.org/img/w/" + iconday + ".png";
+            dayurl = "https://openweathermap.org/img/w/" + iconday + ".png";
             divimage.src = dayurl;
 
             //calculating the fahrenheit for the tempearture
