@@ -12,7 +12,7 @@ let previoussearch = JSON.parse(localStorage.getItem("previoussearch")) || [];
 input.value = "Los Angeles";
 
 // the are the data values from the third fetch that will be used to get the weather stats
-let weatherarray = [1, 9, 17, 25, 33];
+let weatherarray = [3, 11, 19, 27, 35];
 
 weatherData();
 
@@ -75,7 +75,7 @@ function searchGo(search) {
           latitude +
           "&lon=" +
           longitude +
-          "&appid=b117f125dd48f0e3776088816d8ceb52"
+          "&appid=b117f125dd48f0e3776088816d8ceb52&units=imperial"
       )
         .then((response) => response.json())
         .then(function (data) {
@@ -92,13 +92,10 @@ function searchGo(search) {
           incon1url = "https://openweathermap.org/img/w/" + iconimage1 + ".png";
           icontoday.src = incon1url;
 
-          //calculating the fahrenheit for today's temp
-          let todaykelvin = data.main.temp;
-          console.log(todaykelvin);
-          let todaycelsius = todaykelvin - 273.15;
-          let todayFah = Math.floor(todaycelsius * (9 / 5) + 32);
+          //calculating the temperature for today's temp
+          let todaystemp = data.main.temp;
 
-          temptoday.textContent = "Temperature: " + todayFah + " " + "F";
+          temptoday.textContent = "Temperature: " + todaystemp + " " + "F";
           humiditytoday.textContent =
             "Humidity: " + data.main.humidity + " " + "%";
           windtoday.textContent =
@@ -116,7 +113,7 @@ function searchGo(search) {
           latitude +
           "&lon=" +
           longitude +
-          "&appid=b117f125dd48f0e3776088816d8ceb52"
+          "&appid=b117f125dd48f0e3776088816d8ceb52&units=imperial"
       )
         .then((response) => response.json())
         .then(function (data) {
@@ -159,13 +156,10 @@ function searchGo(search) {
             dayurl = "https://openweathermap.org/img/w/" + iconday + ".png";
             divimage.src = dayurl;
 
-            //calculating the fahrenheit for the tempearture
-            let day1kelvin = data.list[newarray].main.temp;
+            //getting the tempearture for all 5 days
+            let day1temp = data.list[newarray].main.temp;
 
-            let day1celsius = day1kelvin - 273.15;
-            let day1Fah = Math.floor(day1celsius * (9 / 5) + 32);
-
-            tempday1.textContent = "Temperature: " + day1Fah + "F";
+            tempday1.textContent = "Temperature: " + day1temp + "F";
             humidityday1.textContent =
               "Humidity: " + data.list[newarray].main.humidity + " " + "%";
             windday1.textContent =
