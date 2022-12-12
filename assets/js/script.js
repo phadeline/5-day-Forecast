@@ -159,7 +159,7 @@ function searchGo(search) {
             //getting the tempearture for all 5 days
             let day1temp = data.list[newarray].main.temp;
 
-            tempday1.textContent = "Temperature: " + day1temp + "F";
+            tempday1.textContent = "Temperature: " + day1temp + " F";
             humidityday1.textContent =
               "Humidity: " + data.list[newarray].main.humidity + " " + "%";
             windday1.textContent =
