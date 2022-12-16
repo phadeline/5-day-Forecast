@@ -1,45 +1,105 @@
-html, body {
-    max-width: 100%;
-    overflow-x: hidden;
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
-h1 {text-align: center;
-padding: 20px 0px;
-background-color:  #11aff958;} 
+h1 {
+  text-align: center;
+  padding: 20px 0px;
+  background-color: #11aff958;
+}
 
-.weather-icon {text-align: center;}
+.weather-icon {
+  text-align: center;
+}
 
-#icontoday {width: 80px; height: 80px;}
+#icontoday {
+  width: 80px;
+  height: 80px;
+}
 
-.icon {width: 80px; height: 80px;}
+.icon {
+  width: 80px;
+  height: 80px;
+}
 
-li {text-align: center;
-list-style-type: none;
-font-size: 30px;}
+li {
+  text-align: center;
+  list-style-type: none;
+  font-size: 30px;
+}
 
-h2 {text-align: center; font-size: 50px;}
+h2 {
+  text-align: center;
+  font-size: 50px;
+}
 
-#currentcity {padding: 0px; margin: 0px;background-color: rgba(255, 192, 203, 0.262);
-    font-weight: bold; border-style: groove;}
+#currentcity {
+  padding: 0px;
+  margin: 0px;
+  background-color: rgba(255, 192, 203, 0.262);
+  font-weight: bold;
+  border-style: groove;
+}
 
-h3 {font-size: 20px;}
+h3 {
+  font-size: 20px;
+}
 
-#currentcity:hover {background-color: rgba(255, 192, 203, 0.619);}
+#currentcity:hover {
+  background-color: rgba(255, 192, 203, 0.619);
+}
 
-.weathers {background-color: #11aff972;;
-border-style: double; margin-bottom: 20px; font-weight: bold;}
+.weathers {
+  background-color: #11aff972;
+  border-style: double;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
 
-p {font-weight: bold;}
+p {
+  font-weight: bold;
+}
 
-#allweathers {display: flex; justify-content: center; align-items: center;}
+#allweathers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-.weathers:hover {background-color: #11aff99e}
+.weathers:hover {
+  background-color: #11aff99e;
+}
 
-#previous {text-align: center; font-weight: bold; font-size: 25px; cursor: pointer; display: flex; flex-direction: column;}
+#previous {
+  text-align: center;
+  font-weight: bold;
+  font-size: 25px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  height: 200px;
+}
 
-#previous button {font-size: 20px; margin-bottom: 10px; background-color: lightblue;}
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 7px;
+}
 
-#text {text-align: center;}
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+}
 
+#previous button {
+  font-size: 20px;
+  margin-bottom: 10px;
+  background-color: lightblue;
+}
 
-
+#text {
+  text-align: center;
+}
