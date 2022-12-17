@@ -69,112 +69,117 @@ function searchGo(search) {
       let longitude = lon.toFixed(2);
       console.log(latitude);
 
-      //This fetches the weather stats for current weather using the longitude and latitude of the previous fetch
-      fetch(
-        "https://api.openweathermap.org/data/2.5/weather?lat=" +
-          latitude +
-          "&lon=" +
-          longitude +
-          "&appid=b117f125dd48f0e3776088816d8ceb52&units=imperial"
-      )
-        .then((response) => response.json())
-        .then(function (data) {
-          console.log(data);
-          //creates li elements for today's weather stats
-          date.textContent = search + " " + today;
-          temptoday = document.createElement("li");
-          humiditytoday = document.createElement("li");
-          windtoday = document.createElement("li");
+      todayWeather(latitude, longitude);
+      fiveDaysWeather(latitude, longitude);
+    });
+}
 
-          //getting the icon for currentday
-          let icontoday = document.getElementById("icontoday");
-          let iconimage1 = data.weather[0].icon;
-          incon1url = "https://openweathermap.org/img/w/" + iconimage1 + ".png";
-          icontoday.src = incon1url;
+//This fetches the weather stats for current weather using the longitude and latitude of the previous fetch
+function todayWeather(latitude, longitude) {
+  fetch(
+    "https://api.openweathermap.org/data/2.5/weather?lat=" +
+      latitude +
+      "&lon=" +
+      longitude +
+      "&appid=b117f125dd48f0e3776088816d8ceb52&units=imperial"
+  )
+    .then((response) => response.json())
+    .then(function (data) {
+      console.log(data);
+      //creates li elements for today's weather stats
+      date.textContent = search + " " + today;
+      temptoday = document.createElement("li");
+      humiditytoday = document.createElement("li");
+      windtoday = document.createElement("li");
 
-          //calculating the temperature for today's temp
-          let todaystemp = data.main.temp;
+      //getting the icon for currentday
+      let icontoday = document.getElementById("icontoday");
+      let iconimage1 = data.weather[0].icon;
+      incon1url = "https://openweathermap.org/img/w/" + iconimage1 + ".png";
+      icontoday.src = incon1url;
 
-          temptoday.textContent = "Temperature: " + todaystemp + " " + "F";
-          humiditytoday.textContent =
-            "Humidity: " + data.main.humidity + " " + "%";
-          windtoday.textContent =
-            "Wind speed: " + data.wind.speed + " " + "MPH";
+      //calculating the temperature for today's temp
+      let todaystemp = data.main.temp;
 
-          current.appendChild(temptoday);
-          current.appendChild(humiditytoday);
-          current.appendChild(windtoday);
-        });
+      temptoday.textContent = "Temperature: " + todaystemp + " " + "F";
+      humiditytoday.textContent = "Humidity: " + data.main.humidity + " " + "%";
+      windtoday.textContent = "Wind speed: " + data.wind.speed + " " + "MPH";
 
-      //This fetches the api for the 5 day forecast
-      //inserts the longitude and latitude into the api address to get weather data
-      fetch(
-        "https://api.openweathermap.org/data/2.5/forecast?lat=" +
-          latitude +
-          "&lon=" +
-          longitude +
-          "&appid=b117f125dd48f0e3776088816d8ceb52&units=imperial"
-      )
-        .then((response) => response.json())
-        .then(function (data) {
-          console.log(data);
-          for (let i = 0; i < weatherarray.length; i++) {
-            //this gets the value of the weatherarray which will be used later on when getting the weather stats
-            //for example in line 126.
-            newarray = weatherarray[i];
+      current.appendChild(temptoday);
+      current.appendChild(humiditytoday);
+      current.appendChild(windtoday);
+    });
+}
 
-            //Creating div that will contain unorderlist and weather icon
-            divweather = document.createElement("div");
-            divweather.setAttribute(
-              "class",
-              "col-lg-3 col-md-5 me-1 col-sm-12 weathers"
-            );
+//This fetches the api for the 5 day forecast
+//inserts the longitude and latitude into the api address to get weather data
+function fiveDaysWeather(latitude, longitude) {
+  fetch(
+    "https://api.openweathermap.org/data/2.5/forecast?lat=" +
+      latitude +
+      "&lon=" +
+      longitude +
+      "&appid=b117f125dd48f0e3776088816d8ceb52&units=imperial"
+  )
+    .then((response) => response.json())
+    .then(function (data) {
+      console.log(data);
+      for (let i = 0; i < weatherarray.length; i++) {
+        //this gets the value of the weatherarray which will be used later on when getting the weather stats
+        //for example in line 126.
+        newarray = weatherarray[i];
 
-            //Creating div that will enclose weather icon image
-            divicon = document.createElement("div");
-            divicon.setAttribute("class", "weather-icon");
+        //Creating div that will contain unorderlist and weather icon
+        divweather = document.createElement("div");
+        divweather.setAttribute(
+          "class",
+          "col-lg-3 col-md-5 me-1 col-sm-12 weathers"
+        );
 
-            //Creating image element that will contain the weather icon
-            divimage = document.createElement("img");
-            divimage.setAttribute("class", "icon");
+        //Creating div that will enclose weather icon image
+        divicon = document.createElement("div");
+        divicon.setAttribute("class", "weather-icon");
 
-            //Creating unordered list that will have all the weather stats
-            ul = document.createElement("ul");
+        //Creating image element that will contain the weather icon
+        divimage = document.createElement("img");
+        divimage.setAttribute("class", "icon");
 
-            //Creating list elements for the stats
-            tempday1 = document.createElement("p");
-            windday1 = document.createElement("p");
-            humidityday1 = document.createElement("p");
-            day1date = document.createElement("h3");
+        //Creating unordered list that will have all the weather stats
+        ul = document.createElement("ul");
 
-            //Getting the date and converting them to MM/DD/YYYY format
-            let datadate1 = data.list[newarray].dt_txt;
-            day1date.textContent = dayjs(datadate1).format("MM/DD/YYYY");
+        //Creating list elements for the stats
+        tempday1 = document.createElement("p");
+        windday1 = document.createElement("p");
+        humidityday1 = document.createElement("p");
+        day1date = document.createElement("h3");
 
-            //getting the icon
-            let iconday = data.list[newarray].weather[0].icon;
-            dayurl = "https://openweathermap.org/img/w/" + iconday + ".png";
-            divimage.src = dayurl;
+        //Getting the date and converting them to MM/DD/YYYY format
+        let datadate1 = data.list[newarray].dt_txt;
+        day1date.textContent = dayjs(datadate1).format("MM/DD/YYYY");
 
-            //getting the tempearture for all 5 days
-            let day1temp = data.list[newarray].main.temp;
+        //getting the icon
+        let iconday = data.list[newarray].weather[0].icon;
+        dayurl = "https://openweathermap.org/img/w/" + iconday + ".png";
+        divimage.src = dayurl;
 
-            tempday1.textContent = "Temperature: " + day1temp + " F";
-            humidityday1.textContent =
-              "Humidity: " + data.list[newarray].main.humidity + " " + "%";
-            windday1.textContent =
-              "Wind speed: " + data.list[newarray].wind.speed + " " + "MPH";
+        //getting the tempearture for all 5 days
+        let day1temp = data.list[newarray].main.temp;
 
-            allweathers.appendChild(divweather);
-            divweather.appendChild(divicon);
-            divicon.appendChild(divimage);
-            divweather.appendChild(ul);
-            ul.appendChild(day1date);
-            ul.appendChild(tempday1);
-            ul.appendChild(windday1);
-            ul.appendChild(humidityday1);
-          }
-        });
+        tempday1.textContent = "Temperature: " + day1temp + " F";
+        humidityday1.textContent =
+          "Humidity: " + data.list[newarray].main.humidity + " " + "%";
+        windday1.textContent =
+          "Wind speed: " + data.list[newarray].wind.speed + " " + "MPH";
+
+        allweathers.appendChild(divweather);
+        divweather.appendChild(divicon);
+        divicon.appendChild(divimage);
+        divweather.appendChild(ul);
+        ul.appendChild(day1date);
+        ul.appendChild(tempday1);
+        ul.appendChild(windday1);
+        ul.appendChild(humidityday1);
+      }
     });
 }
 
