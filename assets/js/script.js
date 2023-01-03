@@ -36,19 +36,22 @@ function weatherData() {
     button.text(previoussearch[i]);
 
     $(previous).append(button);
-
-    //When the user clicks on a previous search, the weather stats will show up
-    $(button).on("click", function (event) {
-      let text = this.textContent;
-      allweathers.textContent = "";
-      current.textContent = "";
-      searchGo(text);
-      event.preventDefault();
-    });
   }
+  
+  //When the user clicks on a previous search, the weather stats will show up
+$("button").on("click", function (event) {
+  let text = event.target.textContent;
+  allweathers.textContent = "";
+  current.textContent = "";
+  date.textContent = "";
+  searchGo(text);
+  event.preventDefault();
+});
 
   searchGo(search2);
 }
+
+
 
 function searchGo(search) {
   //This fetches the longitude and latitude of a location
@@ -83,11 +86,14 @@ function todayWeather(latitude, longitude) {
       longitude +
       "&appid=b117f125dd48f0e3776088816d8ceb52&units=imperial"
   )
-    .then((response) => response.json())
+    .then((response) => {
+      console.log(response);
+      return response.json();
+    })
     .then(function (data) {
       console.log(data);
       //creates li elements for today's weather stats
-      date.textContent = search + " " + today;
+      date.textContent = data.name + " " + today;
       temptoday = document.createElement("li");
       humiditytoday = document.createElement("li");
       windtoday = document.createElement("li");
@@ -188,6 +194,7 @@ input.addEventListener("keypress", function (event) {
   if (event.key === "Enter") {
     allweathers.textContent = "";
     current.textContent = " ";
+    date.textContent = " ";
     weatherData();
     event.preventDefault();
   }
